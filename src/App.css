@@ -1,0 +1,92 @@
+:root {
+  --primary: #E63946;
+  --secondary: #457B9D;
+  --accent: #F4D35E;
+  --dark: #1A1A1A;
+  --charcoal: #2A2A2A;
+  --light: #F8F9FA;
+  --white: #FFFFFF;
+  --gray: #6B7280;
+  --gold: #D4AF37;
+  --teal: #06D6A0;
+  
+  --shadow-sm: 0 2px 8px rgba(0,0,0,0.15);
+  --shadow-md: 0 6px 20px rgba(0,0,0,0.2);
+  --shadow-lg: 0 12px 40px rgba(0,0,0,0.25);
+  --glow: 0 0 20px rgba(230, 57, 70, 0.3);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background:
+    linear-gradient(rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(26, 26, 26, 0.04) 1px, transparent 1px),
+    linear-gradient(135deg, #f8f9fa 0%, #edf0f5 100%);
+  background-size: 24px 24px, 24px 24px, cover;
+  color: var(--dark);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+
+.app {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 100px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-bottom: 1px solid rgba(107, 114, 128, 0.15);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+  text-align: left;
+  color: var(--dark);
+  font-weight: 900;
+  letter-spacing: -1px;
+}
+
+.section-subtitle {
+  text-align: left;
+  color: var(--gray);
+  font-size: 1.1rem;
+  margin-bottom: 3rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 15px;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 40px 10px;
+  }
+
+  h2 {
+    font-size: 1.7rem;
+  }
+}

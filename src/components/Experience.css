@@ -1,0 +1,262 @@
+.experience {
+  width: 100%;
+}
+
+.section-header {
+  margin-bottom: 2rem;
+}
+
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+.experience-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  position: relative;
+}
+
+.experience-timeline::before {
+  content: '';
+  position: absolute;
+  left: 30px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(180deg, var(--primary), var(--secondary));
+}
+
+.experience-card {
+  margin-left: 80px;
+  padding: 1.5rem 2rem;
+  background: white;
+  border-radius: 10px;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid #d1d5db;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.experience-card::before {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background: white;
+  border: 3px solid var(--primary);
+  border-radius: 50%;
+  left: -64px;
+  top: 2rem;
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover {
+  transform: translateX(10px);
+  box-shadow: var(--shadow-md);
+}
+
+.experience-card:hover::before {
+  background: var(--primary);
+  box-shadow: 0 0 0 8px rgba(255, 107, 107, 0.2);
+}
+
+.experience-card.expanded {
+  box-shadow: var(--shadow-lg);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  flex: 1;
+}
+
+.header-left > div {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.company-logo {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+  background: white;
+  border: 2px solid #e5e7eb;
+  border-radius: 12px;
+  padding: 12px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.experience-card:hover .company-logo {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border-color: var(--primary);
+}
+
+.card-header h3 {
+  margin: 0;
+  color: var(--dark);
+  font-size: 1.3rem;
+  line-height: 1.3;
+}
+
+.expand-btn {
+  background: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(230, 57, 70, 0.3);
+}
+
+.expand-btn:hover {
+  background: #c1121f;
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(230, 57, 70, 0.4);
+}
+
+.expand-btn:active {
+  transform: scale(0.95);
+}
+
+.company-badge {
+  background: linear-gradient(135deg, var(--primary), #c1121f);
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+  display: inline-block;
+  width: fit-content;
+}
+
+.duration {
+  color: #4b5563;
+  font-weight: 600;
+  font-size: 0.9rem;
+  margin: 0;
+}
+
+.card-expanded {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--light);
+  animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description {
+  color: var(--gray);
+  line-height: 1.8;
+  margin: 0 0 1rem 0;
+}
+
+.highlights-label {
+  font-size: 0.74rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 800;
+  color: var(--secondary);
+  margin-bottom: 0.75rem;
+}
+
+.highlights-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.highlight-item {
+  color: var(--dark);
+  line-height: 1.6;
+  padding-left: 1.5rem;
+  position: relative;
+  font-size: 0.95rem;
+}
+
+.highlight-item::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--primary);
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .experience-timeline::before {
+    left: 15px;
+  }
+
+  .experience-card {
+    margin-left: 50px;
+  }
+
+  .experience-card::before {
+    left: -42px;
+    width: 12px;
+    height: 12px;
+    border-width: 2px;
+  }
+
+  .card-header {
+    flex-direction: column;
+  }
+
+  .header-left {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .company-logo {
+    width: 80px;
+    height: 80px;
+    padding: 10px;
+  }
+
+  .expand-btn {
+    width: 36px;
+    height: 36px;
+  }
+
+  .card-header h3 {
+    font-size: 1.1rem;
+  }
+}
